@@ -1,15 +1,30 @@
-# # N種類の魔法
+# N,S,D = map(int, input().split())
 
-# 条件
-# Xi秒 <= S秒
-# Yi   >=  D
+# for i in range(N):
+#     X, Y = map(int, input().split())
+#     if X < S and D < Y:
+#         print("Yes")
+#         exit()
+
+# print("No")
+
 
 N, S, D = map(int, input().split())
-X = list(map(int, input().split()))
-Y = list(map(int, input().split()))
+for _ in range(N):
+  X, Y = map(int, input().split())
+  if X < S and Y > D:
+    print('Yes')
+    break
+else:
+  print('No')
+
+
+N,S,D = map(int, input().split())
 
 for i in range(N):
-    if X[i] <= S and Y[i] >= D:
+    X, Y = map(int, input().split())
+    if X < S and Y > D:
         print("Yes")
+        break
     else:
         print("No")
