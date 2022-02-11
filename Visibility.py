@@ -26,7 +26,58 @@ grid=[]
 for i in range(H):
     S = input()
     S = list(S)
-grid.append(S)
+    grid.append(S)
+
+
 # SはH個あるのでH回のループを回す。
 # さらにSをリストに分解するため、S=list（S)と書く
 # これをgridに追加することで二次元配列を作ることができる
+
+#X=1,Y=1のとき、マス(1,1)はgrid[0][0]に相当するため、
+# あらかじめX,Yを−1しておく
+X -= 1
+Y -= 1
+
+# ２：マス（X,Y）から上下左右方向へ壁に当たるまで進み、
+# それぞれの方向について見えるマス（＝壁に当たるまでに通ったマス）の個数をカウントする
+# 見えるマスの個数を格納する変数をansとしておく
+ans = 0
+
+# まず上向きから確認する
+# マス（X,Y)から順に上方向にマスをみていくということはマス(X-1, Y), (X-2, Y), (X-3, Y)。。。を確認していくということ
+# for文でi=1,2,3...についてgrid[X-1][Y]を順に確認していけばいい
+
+# 上
+for i in range(1,H):
+    if 0<=X-i<H:
+        if grid[X-i][Y] =="#":
+            break
+        else:
+            ans +=1
+
+# 下
+for i in range(1,H):
+    if 0<=X+i<H:
+        if grid[X+i][Y] =="#":
+            break
+        else:
+            ans +=1
+
+
+# 左
+for i in range(1,W):
+    if 0<=Y-i<W:
+        if grid[X][Y-i] =="#":
+            break
+        else:
+            ans +=1
+
+# 右
+for i in range(1,W):
+    if 0<=Y+i<W:
+        if grid[X][Y+i] =="#":
+            break
+        else:
+            ans +=1
+ans +=1
+print(ans)
