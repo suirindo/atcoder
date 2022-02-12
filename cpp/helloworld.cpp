@@ -3,7 +3,8 @@
 
 using namespace std; プログラムを短く書くための機能
 #includeで読み込んだC++の機能を利用するためには、通常はstd::coutやstd::endlのようにstd::をはじめに付ける必要があります。
-using namespace std;を利用すると、このstd::を省略して書くことができます。*/
+using namespace std;を利用すると、このstd::を省略して書くことができます。
+*/
 
 #include <bits/stdc++.h>
 
