@@ -6,11 +6,19 @@ using namespace std;
 
 int main(){
 
-    //min関数
-    // int a = 10, b = 5;
-    // int answer = min(a, b);
+    // int a, b, c;
+    // cin >> a >> b >> c;
 
-    // cout << answer << endl;
+    // int maximum = max(max(a, b), c);
+    // int minimum = min(min(a, b), c);
+
+    // cout << maximum - minimum << endl;
+
+    //min関数
+    int a = 10, b = 5;
+    int answer = min(a, b);
+
+    cout << answer << endl;
     //reverse関数
     vector<int> vec = {1,5,3};
     reverse(vec.begin(), vec.end());

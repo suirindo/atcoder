@@ -11,7 +11,7 @@
                 "-Wall",
 				"-fdiagnostics-color=always",
 				"-g",
-				"-std=c++17",
+				"-std=c++11",
                 "-stdlib=libc++",
 				"${file}",
 				"-o",
