@@ -2,8 +2,47 @@
 using namespace std;
 
 int main(){
-    
+    int N;
+    //人数
+    cin >> N;
 
+    //N要素の配列
+    vector<int> A(N);
+
+    //for文で入力。点数データを受け取る
+    for (int i = 0; i < N; i++){
+        cin >> A.at(i);
+    }
+
+    //合計点 初期化=0
+    int sum = 0;
+
+    //合計点を計算
+    for(int i = 0; i < N; i++){
+        sum += A.at(i);
+    }
+
+    //平均点
+    int mean = sum / N;
+
+    //平均点から何点離れているかを計算して出力
+    for (int i = 0; i < N; i++) {
+        if (A.at(i) > mean){
+            cout << A.at(i) - mean << endl;
+        }
+        else {
+            cout << mean - A.at(i) << endl;
+        }
+        // int result = 0;
+        // result = A.at(i) - mean;
+        // if( result < 0){
+        //     cout << mean - A.at(i) << endl;
+        // }
+        // else {
+        //     cout << A.at(i) - mean << endl;
+        // }
+
+    }
 
 
 
@@ -13,7 +52,7 @@ int main(){
     //入力を配列変数で受け取る場合、for文を使って入力処理を書くのが一般的です
     
     //100要素の配列で初期化
-    vector<int> vec(100);
+    // vector<int> vec(100);
     //100個の入力を受けとる
     // for (int i = 0; i < 100; i++){
     //     cin >> vec.at(i);
