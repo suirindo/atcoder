@@ -2,24 +2,31 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"type": "cppbuild",
-			"label": "C/C++: g++-11 アクティブなファイルのビルド",
-			"command": "/opt/homebrew/bin/g++-11",
+			"type": "shell",
+			"label": "Clang++ アクティブなファイルのビルド",
+			"command": "clang++",
 			"args": [
+				"-x",
+                "c++",
+                "-Wall",
 				"-fdiagnostics-color=always",
 				"-g",
+				"-std=c++17",
+                "-stdlib=libc++",
 				"${file}",
 				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}"
+				"${fileDirname}/${fileBasenameNoExtension}",
+                "--debug"
 			],
 			"options": {
-				"cwd": "${fileDirname}"
+				"cwd": "${workspaceFolder}"//"${fileDirname}"
 			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build",
-			"detail": "コンパイラ: /opt/homebrew/bin/g++-11"
+			"problemMatcher": ["$gcc"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+			//"detail": "コンパイラ: /opt/homebrew/bin/g++-11"
 		}
 	]
 }
