@@ -1,23 +1,33 @@
+//#29488025
+
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
 
+int main(){
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
 
-bool IsPrime(int num)
-{
-    if (num < 2) return false;
-    else if (num == 2) return true;
-    else if (num % 2 == 0) return false; // 偶数はあらかじめ除く
+    vector<bool> isprime(250, true);
+    isprime[0] = false; isprime[1] = false;
 
-    double sqrtNum = sqrt(num);
-    for (int i = 3; i <= sqrtNum; i += 2)
-    {
-        if (num % i == 0)
-        {
-            // 素数ではない
-            return false;
+    for(int i = 2; i <= 200; i++){
+        for(int j = i*2; j <= 200; j += 1){
+            isprime[j] = false;
         }
     }
 
-    // 素数である
-    return true;
+    bool taka = false;
+    for(int i = a; i <= b; i++){
+        bool win = true;
+        for(int j = c; j <= d; j++){
+            if(isprime[i+j]) win = false;
+        }
+        if(win) taka = true;
+    }
+    if(taka) cout << "Takahashi" << endl;
+    else cout << "Aoki" << endl;
+
+    return 0;
 }
+
