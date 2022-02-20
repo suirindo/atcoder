@@ -7,6 +7,8 @@ int main(){
 
     if( b - a == 1 || b - a == 9) cout << "Yes" << endl;
     else cout << "No" << endl;
+
+    return 0;
 }
 
 
