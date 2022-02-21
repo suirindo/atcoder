@@ -28,6 +28,42 @@ int main() {
 // 解法2
 // （重複のない）集合を管理するデータ構造を用いて解くことができる。C++ではstd::setを用いることができる。
 
+#include <iostream>
+#include <set>
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+    set<int> a;
+    for (int i = 0; i < n; i++){
+        int x;
+        cin >> x;
+        a.insert(x);
+        cout << a.size() << endl;
+    }
+}
+
+// 解法3
+//a を昇順に並べ替えると、等しい要素は隣り合わせになります。 並べ替えた後の数列において、
+//ai != ai + 1となる i の個数に 1 を足した値が答えとなります。
+
+int main(){
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int& x : a){
+        cin >> x;
+    }
+    sort(begin(a), end(a));
+    int ans = 1;
+    for (int i = 0; i < n - 1; i++){
+        if (a[i] != a[i + 1]) {
+            ans += 1;
+        }
+    }
+    cout << ans << endl;
+ }
 
 
 /* ボツ解答
