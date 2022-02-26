@@ -1,6 +1,35 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define repi(i,a,b) for(int i=int(a);i<int(b);++i)
+template <typename T>
+bool chmax(T &a, const T& b) {
+  if (a < b) {
+    a = b;  // aをbで更新
+    return true;
+  }
+  return false;
+}
 
+string S;
+int N;
+string T = "ATCG";
+
+int main(){
+    cin >> S;
+    N = S.length();
+
+    int ans = 0;
+    repi(L,0,N) repi(R,L,N){
+        int ok = 1;
+        repi(x, L, R + 1) if (T.find(S[x]) == string::npos) ok = 0;
+        if (ok) chmax(ans, R - L + 1);
+    }
+    cout << ans << endl;
+}
+
+
+
+/*
 // ATGC の文字数
 
 bool is_ATGC(char c)
@@ -40,3 +69,5 @@ int main(){
     }
     cout << max_len << endl;
 }
+
+*/
