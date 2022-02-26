@@ -1,7 +1,8 @@
 {
   "files.associations": {
     "ostream": "cpp",
-    "algorithm": "cpp"
+    "algorithm": "cpp",
+    "vector": "cpp"
   },
   "C_Cpp.errorSquiggles": "Enabled",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
