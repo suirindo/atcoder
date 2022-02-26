@@ -1,6 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
+typedef long long ll;
 
+// 計算量O(√N)である高度な素数判定法
+bool isPrime(ll N){
+    for (ll i = 2; i * i <= N; i++){
+        if (N % i == 0) return false;
+    }
+    return true;
+}
+
+/*
 bool isPrime(int x){
     for (int i = 2; i <= x - 1; i++){
         if ( x % i == 0) return false; //自分自身以外で割り切れる場合、素数ではない
@@ -21,6 +31,7 @@ int main(){
     cout << endl;
     return 0;
 }
+*/
 /*
 bool isPrime(int num){
     if (num < 2) return false;
