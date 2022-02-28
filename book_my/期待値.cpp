@@ -1,6 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int N, P[59], Q[59];
+double ans = 0.0;
+
+int main(){
+    cin >> N;
+    for (int i = 1; i <= N; i++) cin >> P[i] >> Q[i];
+
+    for (int i = 1; i <= N; i++){
+        ans += 1.0 * Q[i] / P[i];
+    }
+    cout << ans << endl;
+    return 0;
+}
+
+
+
+
+
+/*
+//サイコロ　解法2
 int N, B[100009], R[100009];
 
 int main(){
@@ -18,11 +38,11 @@ int main(){
     cout << Blue + Red << endl;
     return 0;
  }
-
+*/
 
 
 /*
-// 解法1
+// サイコロ　解法1
 int main(){
     int N;
     cin >> N;
