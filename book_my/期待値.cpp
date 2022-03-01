@@ -1,6 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//サイコロ 夏休みの勉強時間
+int N, A[109], B[109];
+double ans = 0.0;
+
+int main(){
+    cin >> N;
+    for (int i = 1; i <= N; i++) cin >> A[i] >> B[i];
+    
+    for (int i = 1; i <= N; i++){
+    double eval = A[i] * (1.0 / 3.0) + B[i] * (2.0 /  3.0);
+    ans += eval;
+    }
+    cout << ans << endl;
+    return 0;
+}
+
+
+
+/*
+//テストの点数
 int N, P[59], Q[59];
 double ans = 0.0;
 
@@ -14,10 +34,7 @@ int main(){
     cout << ans << endl;
     return 0;
 }
-
-
-
-
+*/
 
 /*
 //サイコロ　解法2
