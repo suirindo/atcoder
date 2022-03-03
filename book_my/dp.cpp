@@ -1,10 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i, N) for (int i = 1; i <= (N); ++i)
+#define repB(i, N) for (int i = 0; i <= (N); ++i)
 
+int N , dp[54];
+
+int main(){
+    cin >> N;
+
+    //dp → 答えの出力
+    repB(i, N){
+        if (i <= 1) dp[i] = 1;
+        else dp[i] = dp[i -1] + dp[i - 2];
+    }
+    cout << dp[N] << endl;
+    return 0;
+}
+
+
+
+/*
 int N, H[100009], dp[100009];
-
-
 int main(){
     //入力
     cin >> N;
@@ -22,3 +38,4 @@ int main(){
   cout << dp[N] << endl;
   return 0;
 }
+*/
