@@ -1,6 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define rep(i, n) for (int i = 0; i < (n); ++i)
 
+int main(){
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    rep(i, n) cin >> a[i];
+    set<int> s;
+    rep(i, n) s.insert(a[i]);
+    cout << s.size() << endl;
+    return 0;
+ 
+}
+
+
+/*
 // 解法1
 // aに現れる整数を順番に見ていき、「それが初めて登場した整数なら答えに1を足す」ことを繰り返せばよい
 int main() {
@@ -66,7 +81,7 @@ int main(){
  }
 
 
-/* ボツ解答
+// ボツ解答
 int main(){
     int N;
     int d[1100];
