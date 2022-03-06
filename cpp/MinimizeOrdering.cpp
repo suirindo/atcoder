@@ -1,16 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 文字列Sの各文字を昇順に並び替えて出力せよ
+
 int main(){
-    string str = "";
-    cin >> str;
-    
-    for(int i = 0; i < (int)str.size(); ++i){
-        char ch = str[i];
-        string ans = str.sort(str[i], str[i + 1]);
-
-}
-
-
-
+    string S; cin >> S;
+    sort(S.begin(), S.end());
+    cout << S <<endl;
 }

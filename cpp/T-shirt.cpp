@@ -1,7 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
 
+// mrsnuke
+int main(){
+    int a, b, c, x;
+    cin >> a >> b >> c >> x;
+    double ans = 0;
+    if (x <= a) ans = 1;
+    else if (a < x && x <= b) ans = (double)c / (b-a);
+    else ans = 0;
+    printf("%.10f¥n", ans);
+    return 0;
+}
+
+/*
+// 解法1
 int main(){
     int A, B, C, X;
     cin >> A >> B >> C >> X;
@@ -18,6 +31,7 @@ int main(){
         }
         return 0;
 }
+*/
 
 /*
 int main(){

@@ -33,9 +33,6 @@ int main(){
     return 0;
 }
 
-
-
-
 /*
 int N , dp[54];
 
@@ -65,7 +62,7 @@ int main(){
         if (i == 2) dp[i] = abs(H[i - 1] - H[i]);
         if ( i >= 3) {
             int v1 = dp[i - 1] + abs(H[i - 1] - H[i]); // 1個前の足場からジャンプする時
-            int v2 = dp[i - 2] + abs(H[i - 2] - H[i]); // 1個前の足場からジャンプする時
+            int v2 = dp[i - 2] + abs(H[i - 2] - H[i]); 
             dp[i] = min(v1, v2);
         }
   }
