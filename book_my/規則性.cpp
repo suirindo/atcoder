@@ -2,7 +2,26 @@
 using namespace std;
 typedef long long ll;
 
+//N個の石 勝負
+int main(){
+    ll N;
+    cin >> N;
 
+    // N = 2^k - 1 の形で表されるかどうかを調べる
+    bool flag = false;
+    for ( int k = 1; k <= 60; k++){
+        if (N == (1LL << k) - 1LL) flag = true;
+    }
+
+    if(flag == true) cout << "Second" << endl;
+    else cout <<"First" << endl;
+    return 0;
+
+}
+
+
+
+/*
 // 2のN乗の一の位を求める
 int main(){
     ll N;
@@ -14,3 +33,4 @@ int main(){
     if (N % 4 == 0) cout << "6" << endl;
     return 0;
 }
+/*
